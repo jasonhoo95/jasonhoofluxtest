@@ -211,9 +211,9 @@ const editTable = () =>{
   // Rendering --------------------------------------------------------------- //
   return (
     <div className={classnames(['container', className])} {...props}>
-      <button onClick={save}>Save</button>
-      <button onClick={e=>setState({...orignalEmptyData})} >Clear</button>
-      <button onClick={e=>editTable()}>{inputEnable?'Edit':'Cancel'}</button>
+      <button className="btnblack" onClick={save}>Save</button>
+      <button className="btnblack" onClick={e=>setState({...orignalEmptyData})} >Clear</button>
+      <button className="btnblack" onClick={e=>editTable()}>{inputEnable?'Edit':'Cancel'}</button>
       {/* <button onClick={e=>restoreData()}>Restore</button> */}
 
       <br />
@@ -226,9 +226,9 @@ const editTable = () =>{
 
   <tr>
   <th></th>
-    <th>lite</th>
-    <th>standard</th>
-    <th>premium</th>
+    <th style={{background:'black',color:'white'}}>lite</th>
+    <th style={{background:'black',color:'white'}}>standard</th>
+    <th style={{background:'black',color:'white'}}>premium</th>
   </tr>
   <tr>
     <td>36 months</td>
@@ -238,11 +238,11 @@ const editTable = () =>{
     <td ><input disabled={inputEnable} type="text" value={state.unlimited36} onChange={e=>changeValue(e,'unlimited36')}></input></td>
 
     </tr>
-  <tr>
+  <tr style={{background:'#d8d8d8'}}>
   <td>24 months</td>
-  <td ><input disabled={inputEnable} type="text" value={state.lite24} onChange={e=>changeliteValue(e,'24')}/></td>
-    <td><input disabled={inputEnable} type="text" value={state.standard24} onChange={e=>changeValue(e,'standard24')}/></td>
-    <td><input disabled={inputEnable} type="text" value={state.unlimited24} onChange={e=>changeValue(e,'unlimited24')}/></td>
+  <td ><input style={{background:'#d8d8d8'}} disabled={inputEnable} type="text" value={state.lite24} onChange={e=>changeliteValue(e,'24')}/></td>
+    <td><input style={{background:'#d8d8d8'}} disabled={inputEnable} type="text" value={state.standard24} onChange={e=>changeValue(e,'standard24')}/></td>
+    <td><input style={{background:'#d8d8d8'}} disabled={inputEnable} type="text" value={state.unlimited24} onChange={e=>changeValue(e,'unlimited24')}/></td>
 
     </tr>
     <tr>
@@ -253,12 +253,12 @@ const editTable = () =>{
     <td><input disabled={inputEnable} type="text" value={state.unlimited12} onChange={e=>changeValue(e,'unlimited12')}/></td>
   </tr>
 
-  <tr>
+  <tr style={{background:'#d8d8d8'}}>
     <td>month to month</td>
 
-  <td ><input disabled={inputEnable} type="text" value={state.litemtm} onChange={e=>changeliteValue(e,'mtm')}/></td>
-    <td ><input disabled={inputEnable} type="text" value={state.standardmtm} onChange={e=>changeValue(e,'standardmtm')}/></td>
-    <td ><input disabled={inputEnable} type="text" value={state.unlimitedmtm} onChange={e=>changeValue(e,'unlimitedmtm')}/></td>
+  <td ><input style={{background:'#d8d8d8'}} disabled={inputEnable} type="text" value={state.litemtm} onChange={e=>changeliteValue(e,'mtm')}/></td>
+    <td ><input style={{background:'#d8d8d8'}} disabled={inputEnable} type="text" value={state.standardmtm} onChange={e=>changeValue(e,'standardmtm')}/></td>
+    <td ><input style={{background:'#d8d8d8'}} disabled={inputEnable} type="text" value={state.unlimitedmtm} onChange={e=>changeValue(e,'unlimitedmtm')}/></td>
   </tr>
 
   
@@ -274,10 +274,25 @@ const editTable = () =>{
           border-style:none;
         }
 
+        .btnblack{
+          background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    outline: none;
+    padding: 5px 20px;
+    margin: 0px 10px;
+        }
+
+        .btnblack:hover{
+          background:black;
+          color:white;
+        }
+
         #customers {
           font-family: Arial, Helvetica, sans-serif;
           border-collapse: collapse;
           width: 100%;
+          box-shadow: 0 1px 5px rgb(0 0 0 / 12%), 0 1px 5px rgb(0 0 0 / 24%);
         }
         #customers td, #customers th {
           border: 1px solid #ddd;
