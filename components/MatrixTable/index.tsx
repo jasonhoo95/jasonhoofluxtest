@@ -281,6 +281,7 @@ const editTable = () =>{
     outline: none;
     padding: 5px 20px;
     margin: 0px 10px;
+    cursor:pointer;
         }
 
         .btnblack:hover{
